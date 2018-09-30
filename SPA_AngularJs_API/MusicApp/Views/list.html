@@ -1,0 +1,24 @@
+﻿<div ng-controller="MusicListController">
+    <button class="btn btn-success btn-sm pull-right" style="margin-bottom:5px" ng-click="create()">Add Now Music</button>
+    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Singers</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="music in musics">
+                <td>{{music.Title}}</td>
+                <td>{{music.Singers}}</td>
+                <td>
+                    <a href="#!/details/{{music.Id}}" class="btn btn-default btn-sm">Details</a>
+                    <button class="btn btn-danger btn-sm" ng-click="delete(music)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div ng-include="'/MusicApp/Views/edit.html'"></div>
+</div>
